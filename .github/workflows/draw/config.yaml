@@ -1,0 +1,268 @@
+draw_config:
+  append_colon_to_layer_header: false
+  small_pad: 4.0
+  glyph_tap_size: 16
+  glyph_hold_size: 12
+  glyph_shifted_size: 10
+  svg_style: |
+    /* inherit to force styles through use tags*/
+    svg path {
+        fill: inherit;
+    }
+    /* font and background color specifications */
+    svg.keymap {
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+        font-size: 14px;
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+        fill: #24292e;
+    }
+
+    /* default key styling */
+    rect.key {
+        fill: #f6f8fa;
+        stroke: #c9cccf;
+        stroke-width: 1;
+    }
+
+    /* color accent for held keys */
+    rect.held, rect.combo.held {
+        /* fill: #fdd; */
+    }
+
+    /* color accent for ghost (optional) keys */
+    rect.ghost, rect.combo.ghost {
+        fill: #ddd;
+    }
+
+    text {
+        text-anchor: middle;
+        dominant-baseline: middle;
+        line-height: 1;
+    }
+
+    /* styling for layer labels */
+    text.label {
+        font-weight: bold;
+        text-anchor: start;
+        paint-order: stroke;
+        fill: #aaa;
+    }
+
+    /* styling for combo tap, and key hold/shifted label text */
+    text.combo, text.hold, text.shifted {
+        font-size: 12px;
+    }
+
+    text.hold {
+        text-anchor: middle;
+        dominant-baseline: auto;
+    }
+
+    text.shifted {
+        text-anchor: middle;
+        dominant-baseline: hanging;
+    }
+
+    /* styling for hold/shifted label text in combo box */
+    text.combo.hold, text.combo.shifted {
+        font-size: 8px;
+    }
+
+    /* lighter symbol for transparent and none keys */
+    rect.trans,
+    rect.none {
+        fill: #e6ebf1;
+        opacity: 0.75;
+        stroke-dasharray: 2, 2;
+    }
+    text.trans,
+    text.none,
+    use.trans,
+    use.none {
+        fill: #7b7e81;
+        opacity: 0.5;
+    }
+
+    /* color accent for combo boxes */
+    rect.combo {
+        fill: #cdf;
+    }
+    /* styling for combo dendrons */
+    path.combo {
+        stroke-width: 1;
+        stroke: #7b7e81;
+        stroke-dasharray: 2, 2;
+        fill: none;
+        opacity: 0.75;
+    }
+
+    /* Start Tabler Icons Cleanup */
+    /* cannot use height/width with glyphs */
+    .icon-tabler > path {
+        fill: inherit;
+        stroke: inherit;
+    }
+    /* hide tabler's default box */
+    .icon-tabler > path[stroke="none"][fill="none"] {
+        visibility: collapse;
+    }
+    /* End Tabler Icons Cleanup */
+
+parse_config:
+  zmk_combos:
+    sl_HYP_left: 
+      align: right
+      key: HYP
+    sl_HYP_right: 
+      align: left
+      key: HYP
+
+  sticky_label: $$mdi:gesture-tap-hold$$
+  trans_legend:
+    tap: $$mdi:transfer$$
+    type: trans
+    
+  raw_binding_map:
+    # "&none":
+      # tap: $$mdi:minus-circle-outline$$
+      # type: none
+    "&bt BT_SEL 0":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: 1
+    "&bt BT_SEL 1":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: 2
+    "&bt BT_SEL 2":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: 3
+    "&bt BT_SEL 3":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: 4
+    "&bt BT_SEL 4":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: 5
+    "&bt BT_PRV":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: $$mdi:skip-previous$$
+    "&bt BT_NXT":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: $$mdi:skip-next$$
+    "&bt BT_CLR":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: $$mdi:close$$
+    "&out OUT_BLE":
+      tap: $$mdi:bluetooth-settings$$
+    "&out OUT_USB":
+      tap: $$mdi:usb$$
+    "&sys_reset":
+      tap: $$mdi:backup-restore$$
+    "&bootloader":
+      tap: $$mdi:progress-download$$
+    "&key_repeat": 
+      tap: Repeat
+    "&hrlm": 
+      shifted: Compose
+      tap: $$mdi:cached$$
+      # $$mdi:repeat-variant$$
+      hold: Shift
+    
+  zmk_keycode_map:
+    LEFT_CONTROL: Ctrl
+    RIGHT_CONTROL: Ctrl
+    LEFT_ALT: Alt
+    RIGHT_ALT: Compose
+    LEFT_GUI: Super
+    RIGHT_GUI: Super
+    LEFT_SHIFT: Shift
+    RIGHT_SHIFT: Shift
+    ESCAPE: $$mdi:export-variant$$
+    SPACE: $$mdi:keyboard-space$$
+    BACKSPACE: $$mdi:backspace-outline$$
+    ENTER: ⮠
+    TAB: ↹
+    DELETE: $$mdi:backspace-reverse-outline$$
+
+    LEFT_ARROW: 🡄
+    DOWN_ARROW: 🡇
+    UP_ARROW: 🡅
+    RIGHT_ARROW: 🡆
+    
+    HOME: $$mdi:arrow-collapse-left$$
+    PAGE_UP: $$mdi:arrow-collapse-up$$
+    PAGE_DOWN: $$mdi:arrow-collapse-down$$
+    END: $$mdi:arrow-collapse-right$$
+
+    C_PLAY_PAUSE: ⏯
+    C_NEXT: ⏭️
+    C_PREV: ⏮️
+    C_VOLUME_DOWN: $$mdi:volume-minus$$
+    C_VOLUME_UP: $$mdi:volume-plus$$
+    C_MUTE: $$mdi:volume-mute$$
+
+    
+    # defaults
+    AMPERSAND: '&'
+    AMPS: '&'
+    APOS: .
+    APOSTROPHE: <
+    ASTERISK: '*'
+    ASTRK: '*'
+    AT: '@'
+    AT_SIGN: '@'
+    BACKSLASH: \
+    BSLH: \
+    CARET: ^
+    COLON: ':'
+    COMMA: ','
+    DLLR: $
+    DOLLAR: $
+    DOT: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    EQUAL: '='
+    EXCL: '!'
+    EXCLAMATION: '!'
+    FSLH: /
+    GRAVE: '`'
+    GREATER_THAN: '>'
+    GT: '>'
+    HASH: '#'
+    LBKT: '['
+    LBRC: '{'
+    LEFT_BRACE: '{'
+    LEFT_BRACKET: '['
+    LEFT_PARENTHESIS: (
+    LESS_THAN: <
+    LPAR: (
+    LT: <
+    MINUS: '-'
+    NON_US_BACKSLASH: \
+    NON_US_BSLH: '|'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    PERCENT: '%'
+    PERIOD: .
+    PIPE: '|'
+    PIPE2: '|'
+    PLUS: +
+    POUND: '#'
+    PRCNT: '%'
+    QMARK: '?'
+    QUESTION: '?'
+    RBKT: ']'
+    RBRC: '}'
+    RIGHT_BRACE: '}'
+    RIGHT_BRACKET: ']'
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    SEMI: ;
+    SEMICOLON: ;
+    SINGLE_QUOTE: ''''
+    SLASH: /
+    SQT: ''''
+    STAR: '*'
+    TILDE: '~'
+    TILDE2: '~'
+    UNDER: _
+    UNDERSCORE: _
