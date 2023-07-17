@@ -111,10 +111,10 @@ draw_config:
 
 parse_config:
   zmk_combos:
-    sl_HYP_left: 
+    HYP_left: 
       align: right
       key: HYP
-    sl_HYP_right: 
+    HYP_right: 
       align: left
       key: HYP
 
