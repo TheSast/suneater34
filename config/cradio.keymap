@@ -9,17 +9,6 @@
 
 / {
     behaviors {
-        lmns: layer_morph_numbers_symbols {
-            compatible = "zmk,behavior-mod-morph";
-            label = "layer_morph_numbers_symbols";
-            bindings =
-                <&mo 2>,
-                <&mo 3>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-        };
         hkr: hold_key_repeat {
             compatible = "zmk,behavior-hold-tap";
             label = "hold_key_repeat";
@@ -28,7 +17,8 @@
                 <&key_repeat>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <225>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
         };
         hrlm: hold_key_repeat_layer_morph {
             compatible = "zmk,behavior-mod-morph";
@@ -59,17 +49,8 @@
                 <&blete>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <225>;
-        };
-        elm: enter_layer_morph {
-            compatible = "zmk,behavior-hold-tap";
-            label = "enter_layer_morph";
-            bindings =
-                <&lmns>,
-                <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <225>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
         };
         tdls: toggle_duplicate_left_shift {
             compatible = "zmk,behavior-mod-morph";
@@ -275,17 +256,16 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        fnsft: function_shift {
+        hthp: hold_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "function_shift";
+            label = "hold_tap_hold_preferred";
             bindings =
-                <&kp>,
-                <&none>;
+                <&mo>,
+                <&kp>;
 
             #binding-cells = <2>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 20 21 22 23 24 25 26 27 28 29>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <60000>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
         };
     };
 
@@ -321,10 +301,10 @@
 
         Base {
             bindings = <
-      &kp B      &kp L      &kp D      &kp C  &kp V          &kp Z        &kp F      &kp O       &kp U  &low_comma
-  &hmls 0 N  &hmla 0 R  &hmlc 0 T  &hmlg 0 S  &kp G          &kp Y    &hmrg 0 H  &hmrc 0 A   &hmla 0 E   &hmrs 0 I
-      &kp X    &kp TAB      &kp M      &kp W  &kp J          &kp K        &kp P      &kp Q  &kp ESCAPE    &low_dot
-                                    &blm 3 0  &hrlm    &lt 1 SPACE  &lt 2 ENTER
+      &kp B      &kp L      &kp D      &kp C  &kp V          &kp Z          &kp F      &kp O       &kp U  &low_comma
+  &hmls 0 N  &hmla 0 R  &hmlc 0 T  &hmlg 0 S  &kp G          &kp Y      &hmrg 0 H  &hmrc 0 A   &hmla 0 E   &hmrs 0 I
+      &kp X    &kp TAB      &kp M      &kp W  &kp J          &kp K          &kp P      &kp Q  &kp ESCAPE    &low_dot
+                                    &blm 3 0  &hrlm    &lt 1 SPACE  &hthp 2 ENTER
             >;
 
             label = "BAS";
