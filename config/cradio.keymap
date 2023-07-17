@@ -301,17 +301,17 @@
     combos {
         compatible = "zmk,combos";
 
-        sl_HYP_left {
-            bindings = <&sl 4>;
+        HYP_left {
+            bindings = <&tog 4>;
             key-positions = <4 24>;
-            layers = <0 1 2 3>;
+            layers = <0 4>;
             slow-release;
         };
 
-        sl_HYP_right {
-            bindings = <&sl 4>;
+        HYP_right {
+            bindings = <&tog 4>;
             key-positions = <5 25>;
-            layers = <0 1 2 3>;
+            layers = <0 4>;
             slow-release;
         };
     };
