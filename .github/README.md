@@ -1,3 +1,3 @@
-# zmk-suneater34
+# suneater34
 
 ![cardio.svg](../svg/cradio.svg)
