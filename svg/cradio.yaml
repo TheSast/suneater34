@@ -1,0 +1,221 @@
+layout: {zmk_keyboard: cradio}
+layers:
+  BAS:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ''
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:backspace-outline$$', h: SYM, s: '$$mdi:backspace-reverse-outline$$'}
+  - {t: '$$mdi:cached$$', h: Shift, s: Compose}
+  - {t: '$$mdi:keyboard-space$$', h: NAV}
+  - {t: ⮠, h: NUM}
+  NAV:
+  - $$mdi:export-variant$$
+  - ''
+  - $$mdi:arrow-collapse-right$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BSPC
+  - DEL
+  - $$mdi:arrow-collapse-left$$
+  - ''
+  - ''
+  - ''
+  - $$mdi:arrow-collapse-down$$
+  - ''
+  - 🡄
+  - 🡇
+  - 🡅
+  - 🡆
+  - ''
+  - $$mdi:volume-minus$$
+  - $$mdi:volume-mute$$
+  - $$mdi:volume-plus$$
+  - ''
+  - $$mdi:arrow-collapse-up$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: NAV, h: toggle}
+  - {type: held}
+  - ''
+  NUM:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F11
+  - F12
+  - F13
+  - F14
+  - F15
+  - F16
+  - F17
+  - F18
+  - F19
+  - F20
+  - ''
+  - ''
+  - {t: NUM, h: toggle}
+  - {type: held}
+  SYM:
+  - '|'
+  - '-'
+  - '='
+  - +
+  - \
+  - '{'
+  - '['
+  - ':'
+  - ']'
+  - '}'
+  - '!'
+  - '@'
+  - '*'
+  - $
+  - '%'
+  - '&'
+  - ^
+  - '#'
+  - '~'
+  - _
+  - '?'
+  - ''''
+  - '`'
+  - '"'
+  - /
+  - <
+  - (
+  - ;
+  - )
+  - '>'
+  - {t: SYM, h: toggle, type: held}
+  - ''
+  - ''
+  - ''
+  HYP:
+  - ''
+  - {t: '$$mdi:skip-previous$$', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:close$$', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:skip-next$$', s: '$$mdi:bluetooth-connect$$'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '5', s: '$$mdi:bluetooth-connect$$'}
+  - ''
+  - $$mdi:bluetooth-settings$$
+  - $$mdi:usb$$
+  - ''
+  - ''
+  - ''
+  - $$mdi:progress-download$$
+  - ''
+  - $$mdi:backup-restore$$
+  - ''
+  - ''
+  - $$mdi:backup-restore$$
+  - ''
+  - $$mdi:progress-download$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  BAS_ALT_LAYOUT:
+  - B
+  - L
+  - D
+  - C
+  - V
+  - Z
+  - F
+  - O
+  - U
+  - ','
+  - {t: N, h: Shift}
+  - {t: R, h: Alt}
+  - {t: T, h: Ctrl}
+  - {t: S, h: Super}
+  - G
+  - Y
+  - {t: H, h: Super}
+  - {t: A, h: Ctrl}
+  - {t: E, h: Alt}
+  - {t: I, h: Shift}
+  - X
+  - ↹
+  - M
+  - W
+  - J
+  - K
+  - P
+  - Q
+  - $$mdi:export-variant$$
+  - .
+  - {t: '$$mdi:backspace-outline$$', h: SYM, s: '$$mdi:backspace-reverse-outline$$'}
+  - {t: '$$mdi:cached$$', h: Shift, s: Compose}
+  - {t: '$$mdi:keyboard-space$$', h: NAV}
+  - {t: ⮠, h: NUM}
+combos:
+- p: [4, 24]
+  k: HYP
+  l: [BAS, HYP]
+  a: right
+- p: [5, 25]
+  k: HYP
+  l: [BAS, HYP]
+  a: left
