@@ -4,7 +4,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
 / {
@@ -12,132 +11,118 @@
         hkr: hold_key_repeat {
             compatible = "zmk,behavior-hold-tap";
             label = "hold_key_repeat";
-            bindings =
-                <&kp>,
-                <&key_repeat>;
+            bindings = <&kp>, <&key_repeat>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
         };
+
         hrlm: hold_key_repeat_layer_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "hold_key_repeat_layer_morph";
-            bindings =
-                <&hkr LEFT_SHIFT 0>,
-                <&kp RIGHT_ALT>;
+            bindings = <&hkr LEFT_SHIFT 0>, <&kp RIGHT_ALT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         blete: blete {
             compatible = "zmk,behavior-mod-morph";
             label = "Mod Morph Behaviour";
-            bindings =
-                <&kp BACKSPACE>,
-                <&kp DELETE>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
             keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI|MOD_RCTL)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         blm: backspace_layer_morph {
             compatible = "zmk,behavior-hold-tap";
             label = "backspace_layer_morph";
-            bindings =
-                <&mo>,
-                <&blete>;
+            bindings = <&mo>, <&blete>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
         };
+
         tdls: toggle_duplicate_left_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_left_shift";
-            bindings =
-                <&kp LEFT_SHIFT>,
-                <&kt LEFT_SHIFT>;
+            bindings = <&kp LEFT_SHIFT>, <&kt LEFT_SHIFT>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
+
         tdrs: toggle_duplicate_right_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_right_shift";
-            bindings =
-                <&kp RIGHT_SHIFT>,
-                <&kt RIGHT_SHIFT>;
+            bindings = <&kp RIGHT_SHIFT>, <&kt RIGHT_SHIFT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
         tdlc: toggle_duplicate_left_ctrl {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_left_ctrl";
-            bindings =
-                <&kp LEFT_CONTROL>,
-                <&kt LEFT_CONTROL>;
+            bindings = <&kp LEFT_CONTROL>, <&kt LEFT_CONTROL>;
 
             #binding-cells = <0>;
             mods = <(MOD_RCTL)>;
         };
+
         tdrc: toggle_duplicate_right_ctrl {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_right_ctrl";
-            bindings =
-                <&kp RIGHT_CONTROL>,
-                <&kt RIGHT_CONTROL>;
+            bindings = <&kp RIGHT_CONTROL>, <&kt RIGHT_CONTROL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
+
         tdla: toggle_duplicate_left_alt {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_left_alt";
-            bindings =
-                <&kp LEFT_ALT>,
-                <&kt LEFT_ALT>;
+            bindings = <&kp LEFT_ALT>, <&kt LEFT_ALT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
+
         tdra: toggle_duplicate_right_alt {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_right_alt";
-            bindings =
-                <&kp RIGHT_ALT>,
-                <&kt RIGHT_ALT>;
+            bindings = <&kp RIGHT_ALT>, <&kt RIGHT_ALT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
         tdlg: toggle_duplicate_left_gui {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_left_gui";
-            bindings =
-                <&kp LEFT_GUI>,
-                <&kt LEFT_GUI>;
+            bindings = <&kp LEFT_GUI>, <&kt LEFT_GUI>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
         };
+
         tdrg: toggle_duplicate_right_gui {
             compatible = "zmk,behavior-mod-morph";
             label = "toggle_duplicate_right_gui";
-            bindings =
-                <&kp RIGHT_GUI>,
-                <&kt RIGHT_GUI>;
+            bindings = <&kp RIGHT_GUI>, <&kt RIGHT_GUI>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
         };
+
         hmls: homerow_mod_left_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_left_shift";
-            bindings =
-                <&tdls>,
-                <&kp>;
+            bindings = <&tdls>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -145,12 +130,11 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         hmrs: homerow_mod_right_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_right_shift";
-            bindings =
-                <&tdrs>,
-                <&kp>;
+            bindings = <&tdrs>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -158,12 +142,11 @@
             flavor = "tap-preferred";
             global-quick-tap;
         };
+
         hmlc: homerow_mod_left_ctrl {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_left_ctrl";
-            bindings =
-                <&tdlc>,
-                <&kp>;
+            bindings = <&tdlc>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -171,12 +154,11 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         hmrc: homerow_mod_right_ctrl {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_right_ctrl";
-            bindings =
-                <&tdrc>,
-                <&kp>;
+            bindings = <&tdrc>, <&kp>;
 
             #binding-cells = <2>;
             quick-tap-ms = <150>;
@@ -184,12 +166,11 @@
             flavor = "tap-preferred";
             global-quick-tap;
         };
+
         hmla: homerow_mod_left_alt {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_left_alt";
-            bindings =
-                <&tdla>,
-                <&kp>;
+            bindings = <&tdla>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -197,12 +178,11 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         hmra: homerow_mod_right_alt {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_right_alt";
-            bindings =
-                <&tdra>,
-                <&kp>;
+            bindings = <&tdra>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -210,12 +190,11 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         hmlg: homerow_mod_left_gui {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_left_gui";
-            bindings =
-                <&tdlg>,
-                <&kp>;
+            bindings = <&tdlg>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -223,12 +202,11 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         hmrg: homerow_mod_right_gui {
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mod_right_gui";
-            bindings =
-                <&tdrg>,
-                <&kp>;
+            bindings = <&tdrg>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -236,32 +214,29 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         low_dot: lowercase_dot {
             compatible = "zmk,behavior-mod-morph";
             label = "lowercase_dot";
-            bindings =
-                <&kp DOT>,
-                <&none>;
+            bindings = <&kp DOT>, <&none>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         low_comma: lowercase_comma {
             compatible = "zmk,behavior-mod-morph";
             label = "lowercase_comma";
-            bindings =
-                <&kp COMMA>,
-                <&none>;
+            bindings = <&kp COMMA>, <&none>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         hthp: hold_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
             label = "hold_tap_hold_preferred";
-            bindings =
-                <&mo>,
-                <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -301,10 +276,10 @@
 
         Base {
             bindings = <
-      &kp B      &kp L      &kp D      &kp C  &kp V          &kp Z          &kp F      &kp O       &kp U  &low_comma
-  &hmls 0 N  &hmla 0 R  &hmlc 0 T  &hmlg 0 S  &kp G          &kp Y      &hmrg 0 H  &hmrc 0 A   &hmla 0 E   &hmrs 0 I
-      &kp X    &kp TAB      &kp M      &kp W  &kp J          &kp K          &kp P      &kp Q  &kp ESCAPE    &low_dot
-                                    &blm 3 0  &hrlm    &lt 1 SPACE  &hthp 2 ENTER
+  &kp Q  &kp W  &kp E  &kp R     &kp T    &kp Y        &kp U          &kp I  &kp O  &kp P
+  &kp A  &kp S  &kp D  &kp F     &kp G    &kp H        &kp J          &kp K  &kp L  &none
+  &kp Z  &kp X  &kp C  &kp V     &kp B    &kp N        &kp M          &none  &none  &none
+                       &blm 3 0  &hrlm    &lt 1 SPACE  &hthp 2 ENTER
             >;
 
             label = "BAS";
@@ -312,10 +287,10 @@
 
         Navigation {
             bindings = <
-     &none              &none     &kp END            &none          &none          &none           &none           &none         &none            &none
-  &kp HOME              &none       &none            &none  &kp PAGE_DOWN          &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
-     &none  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP          &none    &kp PAGE_UP           &none           &none         &none            &none
-                                                     &none         &tog 1          &none           &none
+  &kp ESCAPE  &none              &kp END     &none            &none            &none        &none           &none           &kp BSPC      &kp DEL
+  &kp HOME    &none              &none       &none            &kp PAGE_DOWN    &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
+  &none       &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &none            &kp PAGE_UP  &none           &none           &none         &none
+                                             &none            &tog 1           &none        &none
             >;
 
             label = "NAV";
@@ -323,10 +298,10 @@
 
         Numbers {
             bindings = <
-        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6        &kp F7        &kp F8        &kp F9       &kp F10
+  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-       &kp F11       &kp F12       &kp F13       &kp F14       &kp F15         &kp F16       &kp F17       &kp F18       &kp F19       &kp F20
-                                                   &none         &none          &tog 2         &none
+  &kp F11       &kp F12       &kp F13       &kp F14       &kp F15         &kp F16       &kp F17       &kp F18       &kp F19       &kp F20
+                                            &none         &none           &tog 2        &none
             >;
 
             label = "NUM";
@@ -334,10 +309,10 @@
 
         Symbols {
             bindings = <
-         &kp PIPE         &kp MINUS     &kp EQUAL           &kp PLUS  &kp BACKSLASH    &kp LEFT_BRACE      &kp LEFT_BRACKET      &kp COLON      &kp RIGHT_BRACKET   &kp RIGHT_BRACE
-  &kp EXCLAMATION       &kp AT_SIGN  &kp ASTERISK         &kp DOLLAR    &kp PERCENT     &kp AMPERSAND             &kp CARET       &kp HASH              &kp TILDE    &kp UNDERSCORE
-     &kp QUESTION  &kp SINGLE_QUOTE     &kp GRAVE  &kp DOUBLE_QUOTES      &kp SLASH     &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp SEMICOLON  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN
-                                                              &tog 3          &none             &none                 &none
+  &kp PIPE         &kp MINUS         &kp EQUAL     &kp PLUS           &kp BACKSLASH    &kp LEFT_BRACE  &kp LEFT_BRACKET      &kp COLON      &kp RIGHT_BRACKET      &kp RIGHT_BRACE
+  &kp EXCLAMATION  &kp AT_SIGN       &kp ASTERISK  &kp DOLLAR         &kp PERCENT      &kp AMPERSAND   &kp CARET             &kp HASH       &kp TILDE              &kp UNDERSCORE
+  &kp QUESTION     &kp SINGLE_QUOTE  &kp GRAVE     &kp DOUBLE_QUOTES  &kp SLASH        &kp LESS_THAN   &kp LEFT_PARENTHESIS  &kp SEMICOLON  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN
+                                                   &tog 3             &none            &none           &none
             >;
 
             label = "SYM";
@@ -345,13 +320,23 @@
 
         Hyper {
             bindings = <
-         &none    &bt BT_PRV    &bt BT_CLR    &bt BT_NXT         &none    &none         &none         &none        &none  &none
-  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &out OUT_BLE  &out OUT_USB        &none  &none
-         &none   &bootloader         &none    &sys_reset         &none    &none    &sys_reset         &none  &bootloader  &none
-                                                   &none         &none    &none         &none
+  &none         &bt BT_PRV    &bt BT_CLR    &bt BT_NXT    &none           &none  &none         &none         &none        &none
+  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &out OUT_BLE  &out OUT_USB  &none        &none
+  &none         &bootloader   &none         &sys_reset    &none           &none  &sys_reset    &none         &bootloader  &none
+                                            &none         &none           &none  &none
             >;
 
             label = "HYP";
+        };
+
+        layer_5 {
+            label = "BAS_ALT_LAYOUT";
+            bindings = <
+  &kp B      &kp L      &kp D      &kp C      &kp V    &kp Z        &kp F          &kp O      &kp U       &low_comma
+  &hmls 0 N  &hmla 0 R  &hmlc 0 T  &hmlg 0 S  &kp G    &kp Y        &hmrg 0 H      &hmrc 0 A  &hmla 0 E   &hmrs 0 I
+  &kp X      &kp TAB    &kp M      &kp W      &kp J    &kp K        &kp P          &kp Q      &kp ESCAPE  &low_dot
+                                   &blm 3 0   &hrlm    &lt 1 SPACE  &hthp 2 ENTER
+            >;
         };
     };
 };
